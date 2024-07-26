@@ -2,13 +2,10 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
-
     private static Scanner scanner = new Scanner(System.in);
-
     private static MobilePhone mobilePhone = new MobilePhone();
 
     public static void main(String[] args) {
-
         getInformation();
         boolean isTrue = true;
         while(isTrue){
@@ -41,9 +38,6 @@ public class Main {
         }
     }
 
-
-
-
     private static  void getInformation() {
         System.out.println("Choose:");
         System.out.println("0. to get information.");
@@ -54,12 +48,6 @@ public class Main {
         System.out.println("5. to search for contact.");
         System.out.println("6. to exit.");
     }
-
-
-
-
-
-
 
     private static void addContact(){
         System.out.print("Enter your name: ");
@@ -78,7 +66,6 @@ public class Main {
     private static void viewContact(){
         mobilePhone.viewContact();
     }
-
 
     private static void updateContact(){
         System.out.print("Enter the Contact you wanna update: ");
@@ -103,7 +90,6 @@ public class Main {
         }
     }
 
-
     private static void removeContact() {
         System.out.print("Enter the Contact you wanna remove: ");
         String name = scanner.nextLine();
@@ -113,15 +99,12 @@ public class Main {
             System.out.println("Contact not found");
             return;
         }
-
         if(mobilePhone.removeContact(existingContact)){
             System.out.println("Contact Successfully deleted");
         }else{
             System.out.println("Error deleting.");
         }
     }
-
-
 
     private static void searchContact() {
         System.out.print("Enter the Contact you wanna search: ");
@@ -135,6 +118,5 @@ public class Main {
 
         System.out.println("Name: " + existingContact.getName() + " phone number is: " + existingContact.getPhoneNumber());
     }
-
 
 }

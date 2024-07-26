@@ -3,10 +3,6 @@ import java.util.ArrayList;
 public class MobilePhone {
     private ArrayList<Contact> myContact = new ArrayList<Contact>();
 
-
-
-
-
     public boolean addContact(Contact contact){
         if(findContact(contact.getName())>=0){
             System.out.println("Contact already exist");
@@ -17,15 +13,12 @@ public class MobilePhone {
         }
     }
 
-
     public void viewContact(){
         for(int i=0; i<this.myContact.size() ;i++){
             System.out.println((i+1) + ". " + this.myContact.get(i).getName()+"  -> " + this.myContact.get(i).getPhoneNumber() );
         }
         System.out.println("Total contact = "  + this.myContact.size());
-
     }
-
 
     public boolean updateContact(Contact oldContact, Contact newContact){
         int position = findContact(oldContact);
@@ -39,7 +32,6 @@ public class MobilePhone {
         }
     }
 
-
     public boolean removeContact( Contact contact ){
         int position = findContact(contact);
         if(position>=0){
@@ -52,7 +44,6 @@ public class MobilePhone {
         }
     }
 
-
     public String searchContact(Contact contact){
         if(findContact(contact)>=0){
             return contact.getName();
@@ -62,7 +53,7 @@ public class MobilePhone {
     }
 
     public Contact searchContact(String name){
-        int position = findContact(name);
+        int position = findContact(name.toLowerCase());
         if(position>=0){
             return this.myContact.get(position);
         }

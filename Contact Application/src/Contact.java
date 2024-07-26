@@ -4,7 +4,7 @@ public class Contact {
     private String phoneNumber;
 
     public Contact(String name, String phoneNumber){
-        this.name = name;
+        this.name = name.toLowerCase();
         this.phoneNumber = phoneNumber;
     }
 
